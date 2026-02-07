@@ -1,0 +1,36 @@
+# Robots.txt pour Qrela - Générateur de QR Code
+# Permet aux moteurs de recherche d'indexer le site
+
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /faq.html
+Allow: /privacy.html
+Allow: /about.html
+Allow: /sitemap.xml
+Allow: /robots.txt
+
+# Désactiver les répertoires sensibles
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /dist/
+Disallow: /.git/
+Disallow: /.env
+Disallow: /package.json
+Disallow: /vite.config.js
+
+# Crawl-delay pour éviter la surcharge
+Crawl-delay: 1
+
+# Directives spécifiques pour Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Directives spécifiques pour Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://qrela.diogo-andrade.org/sitemap.xml
