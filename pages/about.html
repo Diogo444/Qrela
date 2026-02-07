@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0F172A" />
+    <meta name="robots" content="index, follow" />
+
+    <title>À propos — Générateur de QR code gratuit | Qrela</title>
+    <meta
+      name="description"
+      content="À propos de Qrela : générateur de QR code gratuit, simple et utilisable par tous. Création directement dans le navigateur, export PNG/SVG."
+    />
+
+    <link rel="canonical" href="%VITE_SITE_URL%/about.html" />
+    <link rel="icon" href="/ico/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/ico/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/ico/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/ico/web-app-manifest-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/ico/web-app-manifest-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/ico/apple-touch-icon.png" />
+    <link rel="manifest" href="/ico/site.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Qrela" />
+    <meta property="og:title" content="À propos — Générateur de QR code gratuit" />
+    <meta
+      property="og:description"
+      content="Un générateur de QR code gratuit, simple et rapide. Personnalisation + export PNG/SVG."
+    />
+    <meta property="og:url" content="%VITE_SITE_URL%/about.html" />
+    <meta property="og:image" content="%VITE_SITE_URL%/ico/web-app-manifest-512x512.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="À propos — Générateur de QR code gratuit" />
+    <meta name="twitter:description" content="Générateur de QR code gratuit, simple et rapide." />
+    <meta name="twitter:image" content="%VITE_SITE_URL%/ico/web-app-manifest-512x512.png" />
+    <meta name="twitter:image:alt" content="Logo Qrela" />
+  </head>
+  <body class="bg-bg text-fg">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-surface-2 focus:px-3 focus:py-2"
+      >Aller au contenu</a
+    >
+
+    <div id="app" class="w-full">
+      <header class="border-b border-border bg-bg/60 backdrop-blur">
+        <div class="mx-auto w-full max-w-none px-4 py-4 sm:px-6 lg:max-w-6xl lg:px-8">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <a href="/" class="inline-flex items-center gap-3">
+                <img src="/ico/favicon.svg" alt="Qrela" width="36" height="36" class="h-9 w-9" />
+                <div>
+                  <p class="text-base font-semibold leading-tight">Qrela</p>
+                  <p class="text-base text-muted md:text-sm">Générateur de QR code gratuit</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <nav class="hidden items-center gap-4 text-sm md:flex" aria-label="Navigation">
+                <a href="/faq.html" class="text-muted hover:text-fg">FAQ</a>
+                <a href="/privacy.html" class="text-muted hover:text-fg">Confidentialité</a>
+                <a href="/about.html" class="text-fg">À propos</a>
+              </nav>
+
+              <button
+                type="button"
+                class="icon-btn md:hidden"
+                data-mobile-nav-toggle
+                aria-controls="mobile-nav-panel"
+                aria-expanded="false"
+                aria-label="Ouvrir le menu"
+              >
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                  <path
+                    d="M4 6.5h16M4 12h16M4 17.5h16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div
+            id="mobile-nav-panel"
+            class="mobile-nav-panel md:hidden"
+            data-mobile-nav-panel
+            data-open="false"
+            aria-hidden="true"
+            inert
+          >
+            <div class="mobile-nav-panel__inner">
+              <nav class="p-2" aria-label="Navigation mobile">
+                <a href="/" class="mobile-nav-link">Accueil</a>
+                <a href="/faq.html" class="mobile-nav-link">FAQ</a>
+                <a href="/privacy.html" class="mobile-nav-link">Confidentialité</a>
+                <a href="/about.html" class="mobile-nav-link" aria-current="page">À propos</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="mx-auto w-full max-w-none px-4 pt-4 sm:px-6 lg:max-w-6xl lg:px-8">
+        <div id="ad-slot-top"></div>
+      </div>
+
+      <main id="main" class="mx-auto w-full max-w-none px-4 py-8 sm:px-6 lg:max-w-3xl lg:px-8">
+        <h1 class="text-2xl font-bold tracking-tight md:text-3xl">À propos</h1>
+        <p class="mt-2 text-base text-muted">
+          Qrela est un générateur de QR code gratuit, pensé pour être simple, rapide et facile à utiliser.
+        </p>
+
+        <div class="mt-6 space-y-4">
+          <section class="card">
+            <h2 class="text-base font-semibold">Gratuit et pratique</h2>
+            <p class="mt-2 text-base text-muted md:text-sm">
+              Vous choisissez un contenu (lien, texte, Wi‑Fi…), vous personnalisez le style, puis vous téléchargez votre
+              QR en PNG ou SVG.
+            </p>
+          </section>
+
+          <section class="card">
+            <h2 class="text-base font-semibold">Publicités</h2>
+            <p class="mt-2 text-base text-muted md:text-sm">
+              Des publicités peuvent s'afficher. Elles servent uniquement à financer le serveur et le nom de domaine.
+            </p>
+            <p class="mt-2 text-base text-muted md:text-sm">
+              Si vous aimez Qrela, merci de désactiver votre bloqueur de pubs pour ce site.
+            </p>
+          </section>
+
+          <section class="card">
+            <h2 class="text-base font-semibold">Auteur</h2>
+            <p class="mt-2 text-base text-muted md:text-sm">
+              Auteur : Diogo Andrade —
+              <a href="https://diogo-andrade.org" class="text-accent hover:underline" target="_blank" rel="noreferrer"
+                >diogo-andrade.org</a
+              >
+            </p>
+          </section>
+        </div>
+
+        <p class="mt-6 text-base text-muted md:text-sm">
+          Retour au générateur : <a href="/" class="text-accent hover:underline">/</a>
+        </p>
+      </main>
+
+      <div class="mx-auto w-full max-w-none px-4 pb-6 sm:px-6 lg:max-w-6xl lg:px-8">
+        <div id="ad-slot-bottom"></div>
+      </div>
+
+      <footer class="border-t border-border">
+        <div
+          class="mx-auto flex w-full max-w-none flex-col gap-3 px-4 py-6 sm:px-6 md:flex-row md:items-center md:justify-between lg:max-w-6xl lg:px-8"
+        >
+          <p class="text-base text-muted md:text-sm">QR généré dans votre navigateur — aucune donnée envoyée.</p>
+          <nav class="flex flex-wrap gap-4 text-sm" aria-label="Liens">
+            <a href="/" class="text-muted hover:text-fg">Accueil</a>
+            <a href="/faq.html" class="text-muted hover:text-fg">FAQ</a>
+            <a href="/privacy.html" class="text-muted hover:text-fg">Confidentialité</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0F172A" />
+    <meta name="robots" content="index, follow" />
+
+    <title>Générateur de QR code gratuit et personnalisable | Qrela</title>
+    <meta
+      name="description"
+      content="Générateur de QR code gratuit et personnalisable. Créez un QR pour un lien, texte, email, téléphone, SMS ou Wi‑Fi. Sans inscription. Export PNG/SVG."
+    />
+
+    <link rel="canonical" href="%VITE_SITE_URL%/" />
+    <link rel="icon" href="/ico/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/ico/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/ico/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/ico/web-app-manifest-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/ico/web-app-manifest-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/ico/apple-touch-icon.png" />
+    <link rel="manifest" href="/ico/site.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Qrela" />
+    <meta property="og:title" content="Générateur de QR code gratuit et personnalisable" />
+    <meta
+      property="og:description"
+      content="Créez un QR code personnalisable (lien, texte, email, téléphone, SMS, Wi‑Fi) et exportez en PNG/SVG. Sans inscription."
+    />
+    <meta property="og:url" content="%VITE_SITE_URL%/" />
+    <meta property="og:image" content="%VITE_SITE_URL%/ico/web-app-manifest-512x512.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Générateur de QR code gratuit et personnalisable" />
+    <meta name="twitter:description" content="QR code gratuit, sans inscription, personnalisable. Export PNG/SVG." />
+    <meta name="twitter:image" content="%VITE_SITE_URL%/ico/web-app-manifest-512x512.png" />
+    <meta name="twitter:image:alt" content="Logo Qrela" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Qrela",
+        "url": "%VITE_SITE_URL%/",
+        "inLanguage": "fr-FR",
+        "description": "Générateur de QR code gratuit et personnalisable (lien, texte, email, téléphone, SMS, Wi‑Fi) avec export PNG/SVG. Sans inscription."
+      }
+    </script>
+  </head>
+  <body class="bg-bg text-fg">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-surface-2 focus:px-3 focus:py-2"
+      >Aller au contenu</a
+    >
+
+    <div id="app" class="w-full">
+      <header class="border-b border-border bg-bg/60 backdrop-blur">
+        <div class="mx-auto w-full max-w-none px-4 py-4 sm:px-6 lg:max-w-6xl lg:px-8">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <img src="/ico/favicon.svg" alt="Qrela" width="36" height="36" class="h-9 w-9" />
+              <div>
+                <p class="text-base font-semibold leading-tight">Qrela</p>
+                <p class="text-base text-muted md:text-sm">Générateur de QR code gratuit • sans inscription • rapide</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <nav class="hidden items-center gap-4 text-sm md:flex" aria-label="Navigation">
+                <a href="/faq.html" class="text-muted hover:text-fg">FAQ</a>
+                <a href="/privacy.html" class="text-muted hover:text-fg">Confidentialité</a>
+                <a href="/about.html" class="text-muted hover:text-fg">À propos</a>
+              </nav>
+
+              <button
+                type="button"
+                class="icon-btn md:hidden"
+                data-mobile-nav-toggle
+                aria-controls="mobile-nav-panel"
+                aria-expanded="false"
+                aria-label="Ouvrir le menu"
+              >
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                  <path
+                    d="M4 6.5h16M4 12h16M4 17.5h16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div
+            id="mobile-nav-panel"
+            class="mobile-nav-panel md:hidden"
+            data-mobile-nav-panel
+            data-open="false"
+            aria-hidden="true"
+            inert
+          >
+            <div class="mobile-nav-panel__inner">
+              <nav class="p-2" aria-label="Navigation mobile">
+                <a href="/" class="mobile-nav-link" aria-current="page">Accueil</a>
+                <a href="/faq.html" class="mobile-nav-link">FAQ</a>
+                <a href="/privacy.html" class="mobile-nav-link">Confidentialité</a>
+                <a href="/about.html" class="mobile-nav-link">À propos</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="mx-auto w-full max-w-none px-4 pt-4 sm:px-6 lg:max-w-6xl lg:px-8">
+        <div id="ad-slot-top"></div>
+      </div>
+
+      <main id="main" class="mx-auto w-full max-w-none px-4 py-6 sm:px-6 lg:max-w-6xl lg:px-8">
+        <h1 class="text-2xl font-bold tracking-tight md:text-3xl">Générateur de QR Code gratuit</h1>
+        <p class="mt-2 text-base text-muted">
+          Génération instantanée dans votre navigateur, personnalisation, logo, export <strong>PNG</strong>/<strong>SVG</strong>.
+        </p>
+
+        <div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+          <!-- Aperçu + actions -->
+          <section class="order-2 md:order-2">
+            <div class="card">
+              <div>
+                <h2 class="text-lg font-semibold">Aperçu</h2>
+                <p class="mt-1 text-base text-muted md:text-sm">Mise à jour en direct à chaque changement.</p>
+              </div>
+
+              <div class="mt-4 grid place-items-center rounded-xl border border-border bg-bg/40 p-2 sm:p-4">
+                <div id="qr-mount" class="w-full max-w-[280px] sm:max-w-[360px]" aria-label="Aperçu du QR code"></div>
+              </div>
+
+              <div class="mt-4 grid gap-3 sm:grid-cols-2">
+                <button id="download-png" type="button" class="btn btn-primary">Télécharger PNG</button>
+                <button id="download-svg" type="button" class="btn btn-secondary">Télécharger SVG</button>
+                <button id="copy-content" type="button" class="btn btn-secondary">Copier le contenu</button>
+                <button id="reset-all" type="button" class="btn btn-secondary">Réinitialiser</button>
+              </div>
+
+              <div class="mt-4">
+                <label for="encoded-output" class="text-sm font-medium">Contenu encodé</label>
+                <textarea id="encoded-output" readonly class="input mt-2 min-h-16 resize-none"></textarea>
+              </div>
+
+              <p
+                id="status-message"
+                role="status"
+                aria-live="polite"
+                data-kind="ok"
+                class="status mt-3 data-[kind=error]:border-danger/40 data-[kind=error]:text-danger data-[kind=ok]:text-muted"
+              >
+                QR prêt.
+              </p>
+
+              <p class="mt-2 text-xs text-muted">
+                QR généré dans votre navigateur • aucune donnée envoyée • aucun compte • gratuit.
+              </p>
+            </div>
+          </section>
+
+          <!-- Réglages -->
+          <section class="order-1 md:order-1">
+            <div class="card">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <h2 class="text-lg font-semibold">Réglages</h2>
+                <p class="text-xs text-muted">Presets rapides</p>
+              </div>
+
+              <div class="mt-3 flex flex-wrap gap-2" aria-label="Presets">
+                <button
+                  type="button"
+                  data-preset="classic"
+                  data-active="true"
+                  class="pill data-[active=true]:bg-surface-2 data-[active=true]:text-fg"
+                >
+                  Classic
+                </button>
+                <button
+                  type="button"
+                  data-preset="dark"
+                  data-active="false"
+                  class="pill data-[active=true]:bg-surface-2 data-[active=true]:text-fg"
+                >
+                  Dark
+                </button>
+                <button
+                  type="button"
+                  data-preset="neon"
+                  data-active="false"
+                  class="pill data-[active=true]:bg-surface-2 data-[active=true]:text-fg"
+                >
+                  Neon
+                </button>
+                <button
+                  type="button"
+                  data-preset="soft"
+                  data-active="false"
+                  class="pill data-[active=true]:bg-surface-2 data-[active=true]:text-fg"
+                >
+                  Soft
+                </button>
+                <button
+                  type="button"
+                  data-preset="high-contrast"
+                  data-active="false"
+                  class="pill data-[active=true]:bg-surface-2 data-[active=true]:text-fg"
+                >
+                  High contrast
+                </button>
+              </div>
+
+              <div class="mt-5 flex gap-2" role="tablist" aria-label="Sections de réglages">
+                <button
+                  type="button"
+                  role="tab"
+                  data-main-tab="content"
+                  data-active="true"
+                  class="tab data-[active=true]:bg-surface-2 data-[active=true]:text-fg"
+                >
+                  Contenu
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  data-main-tab="appearance"
+                  data-active="false"
+                  class="tab data-[active=true]:bg-surface-2 data-[active=true]:text-fg"
+                >
+                  Apparence
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  data-main-tab="logo"
+                  data-active="false"
+                  class="tab data-[active=true]:bg-surface-2 data-[active=true]:text-fg"
+                >
+                  Logo
+                </button>
+              </div>
+
+              <!-- CONTENU -->
+              <div class="mt-4 space-y-4" data-main-tab-panel="content">
+                <details class="rounded-xl border border-border bg-bg/30 p-3 open:bg-bg/40" open>
+                  <summary class="details-summary cursor-pointer list-none text-sm font-semibold">Type de contenu</summary>
+                  <p class="mt-2 text-xs text-muted">
+                    URL, texte, email, téléphone, SMS, Wi‑Fi — le QR est mis à jour automatiquement.
+                  </p>
+                  <div class="mt-3 flex flex-wrap gap-2" role="tablist" aria-label="Type de contenu du QR code">
+                    <button
+                      type="button"
+                      role="tab"
+                      data-payload-mode="url"
+                      data-active="true"
+                      class="tab-sm data-[active=true]:bg-surface-2 data-[active=true]:text-fg"
+                    >
+                      URL
+                    </button>
+                    <button
+                      type="button"
+                      role="tab"
+                      data-payload-mode="text"
+                      data-active="false"
+                      class="tab-sm data-[active=true]:bg-surface-2 data-[active=true]:text-fg"
+                    >
+                      Texte
+                    </button>
+                    <button
+                      type="button"
+                      role="tab"
+                      data-payload-mode="email"
+                      data-active="false"
+                      class="tab-sm data-[active=true]:bg-surface-2 data-[active=true]:text-fg"
+                    >
+                      Email
+                    </button>
+                    <button
+                      type="button"
+                      role="tab"
+                      data-payload-mode="phone"
+                      data-active="false"
+                      class="tab-sm data-[active=true]:bg-surface-2 data-[active=true]:text-fg"
+                    >
+                      Téléphone
+                    </button>
+                    <button
+                      type="button"
+                      role="tab"
+                      data-payload-mode="sms"
+                      data-active="false"
+                      class="tab-sm data-[active=true]:bg-surface-2 data-[active=true]:text-fg"
+                    >
+                      SMS
+                    </button>
+                    <button
+                      type="button"
+                      role="tab"
+                      data-payload-mode="wifi"
+                      data-active="false"
+                      class="tab-sm data-[active=true]:bg-surface-2 data-[active=true]:text-fg"
+                    >
+                      WiFi
+                    </button>
+                  </div>
+                </details>
+
+                <details class="rounded-xl border border-border bg-bg/30 p-3 open:bg-bg/40" open>
+                  <summary class="details-summary cursor-pointer list-none text-sm font-semibold">Champs</summary>
+
+                  <div class="mt-3 space-y-4">
+                    <div data-payload-panel="url">
+                      <div class="flex items-center justify-between gap-3">
+                        <label for="payload-url" class="text-sm font-medium">URL</label>
+                        <button
+                          type="button"
+                          class="help-btn"
+                          aria-controls="help-url"
+                          aria-expanded="false"
+                          data-help-toggle="help-url"
+                        >
+                          ?
+                        </button>
+                      </div>
+                      <p id="help-url" class="mt-2 text-xs text-muted" hidden>
+                        Si vous omettez https://, il sera ajouté automatiquement.
+                      </p>
+                      <input id="payload-url" type="url" inputmode="url" autocomplete="off" class="input mt-2" />
+                    </div>
+
+                    <div data-payload-panel="text" hidden>
+                      <label for="payload-text" class="text-sm font-medium">Texte</label>
+                      <textarea id="payload-text" class="textarea mt-2"></textarea>
+                    </div>
+
+                    <div data-payload-panel="email" hidden class="space-y-3">
+                      <label for="payload-email" class="text-sm font-medium">Email</label>
+                      <input id="payload-email" type="email" inputmode="email" autocomplete="email" class="input" />
+                      <div class="grid gap-3 sm:grid-cols-2">
+                        <div>
+                          <label for="payload-email-subject" class="text-sm font-medium">Objet</label>
+                          <input id="payload-email-subject" type="text" class="input mt-2" />
+                        </div>
+                        <div>
+                          <label for="payload-email-body" class="text-sm font-medium">Message</label>
+                          <input id="payload-email-body" type="text" class="input mt-2" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div data-payload-panel="phone" hidden>
+                      <label for="payload-phone" class="text-sm font-medium">Téléphone</label>
+                      <input id="payload-phone" type="tel" inputmode="tel" autocomplete="tel" class="input mt-2" />
+                    </div>
+
+                    <div data-payload-panel="sms" hidden class="grid gap-3 sm:grid-cols-2">
+                      <div>
+                        <label for="payload-sms-phone" class="text-sm font-medium">Téléphone</label>
+                        <input id="payload-sms-phone" type="tel" inputmode="tel" class="input mt-2" />
+                      </div>
+                      <div>
+                        <label for="payload-sms-message" class="text-sm font-medium">Message</label>
+                        <input id="payload-sms-message" type="text" class="input mt-2" />
+                      </div>
+                    </div>
+
+                    <div data-payload-panel="wifi" hidden class="space-y-3">
+                      <p class="text-xs text-muted">Réseau Wi‑Fi (nom + sécurité + mot de passe).</p>
+                      <div>
+                        <label for="payload-wifi-ssid" class="text-sm font-medium">Nom du réseau (SSID)</label>
+                        <input id="payload-wifi-ssid" type="text" class="input mt-2" />
+                      </div>
+                      <div class="grid gap-3 sm:grid-cols-2">
+                        <div>
+                          <label for="payload-wifi-auth" class="text-sm font-medium">Sécurité</label>
+                          <select id="payload-wifi-auth" class="select mt-2">
+                            <option value="WPA">WPA/WPA2</option>
+                            <option value="WEP">WEP</option>
+                            <option value="nopass">Sans mot de passe</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label for="payload-wifi-password" class="text-sm font-medium">Mot de passe</label>
+                          <input id="payload-wifi-password" type="password" class="input mt-2" />
+                        </div>
+                      </div>
+                      <label class="flex items-center gap-2 text-sm text-muted">
+                        <input
+                          id="payload-wifi-hidden"
+                          type="checkbox"
+                          class="h-4 w-4 rounded border-border bg-bg/40 text-accent focus-visible:shadow-focus"
+                        />
+                        Réseau masqué
+                      </label>
+                    </div>
+                  </div>
+                </details>
+
+                <div id="ad-slot-left"></div>
+              </div>
+
+              <!-- APPARENCE -->
+              <div class="mt-4 space-y-4" data-main-tab-panel="appearance" hidden>
+                <details class="rounded-xl border border-border bg-bg/30 p-3 open:bg-bg/40" open>
+                  <summary class="details-summary cursor-pointer list-none text-sm font-semibold">Taille & marge</summary>
+                  <div class="mt-3 space-y-3">
+                    <div>
+                      <label for="qr-size" class="flex items-center justify-between text-sm font-medium">
+                        Taille <span id="qr-size-value" class="text-xs text-muted">320px</span>
+                      </label>
+                      <input id="qr-size" type="range" min="128" max="1024" step="8" class="mt-2 w-full accent-accent" />
+                    </div>
+                    <div>
+                      <div class="flex items-center justify-between gap-3">
+                        <div class="flex items-center gap-2">
+                          <label for="qr-margin" class="text-sm font-medium">Marge</label>
+                          <span class="tooltip" data-tooltip>
+                            <button
+                              type="button"
+                              class="icon-btn icon-btn-sm"
+                              data-tooltip-toggle
+                              aria-expanded="false"
+                              aria-label="Aide : marge du QR code"
+                            >
+                              i
+                            </button>
+                            <div role="tooltip" class="tooltip-panel">
+                              <p class="font-semibold">Marge (espace autour du QR)</p>
+                              <p class="mt-1 text-muted">
+                                Un petit espace vide autour du QR aide beaucoup la lecture. Si un QR se scanne mal,
+                                augmentez la marge.
+                              </p>
+                            </div>
+                          </span>
+                        </div>
+                        <span id="qr-margin-value" class="text-xs text-muted">8px</span>
+                      </div>
+                      <input id="qr-margin" type="range" min="0" max="48" step="1" class="mt-2 w-full accent-accent" />
+                    </div>
+                  </div>
+                </details>
+
+                <details class="rounded-xl border border-border bg-bg/30 p-3 open:bg-bg/40" open>
+                  <summary class="details-summary cursor-pointer list-none text-sm font-semibold">Styles</summary>
+                  <div class="mt-3 grid gap-3 sm:grid-cols-2">
+                    <div>
+                      <div class="flex items-center justify-between gap-3">
+                        <label for="qr-ecc" class="text-sm font-medium">Correction d'erreur</label>
+                        <span class="tooltip" data-tooltip>
+                          <button
+                            type="button"
+                            class="icon-btn icon-btn-sm"
+                            data-tooltip-toggle
+                            aria-expanded="false"
+                            aria-label="Aide : correction d'erreur"
+                          >
+                            i
+                          </button>
+                          <div role="tooltip" class="tooltip-panel">
+                            <p class="font-semibold">Correction d'erreur : à quoi ça sert ?</p>
+                            <p class="mt-1 text-muted">
+                              Elle aide le QR à rester lisible même s'il est un peu abîmé (pli, impression imparfaite) ou
+                              si vous ajoutez un logo.
+                            </p>
+                            <ul class="mt-2 list-disc space-y-1 pl-5 text-muted">
+                              <li><strong>L (7%)</strong> : utile si le QR est “propre” (écran). Plus léger.</li>
+                              <li><strong>M (15%)</strong> : bon compromis pour la plupart des cas.</li>
+                              <li><strong>Q (25%)</strong> : recommandé si vous ajoutez un petit logo.</li>
+                              <li><strong>H (30%)</strong> : le plus robuste, mais le QR peut être plus “chargé”.</li>
+                            </ul>
+                          </div>
+                        </span>
+                      </div>
+                      <select id="qr-ecc" class="select mt-2">
+                        <option value="L">L (7%)</option>
+                        <option value="M" selected>M (15%)</option>
+                        <option value="Q">Q (25%)</option>
+                        <option value="H">H (30%)</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="qr-dots-type" class="text-sm font-medium">Style des points</label>
+                      <select id="qr-dots-type" class="select mt-2">
+                        <option value="square">Carré</option>
+                        <option value="dots">Points</option>
+                        <option value="rounded" selected>Arrondi</option>
+                        <option value="extra-rounded">Très arrondi</option>
+                        <option value="classy">Élégant</option>
+                        <option value="classy-rounded">Élégant arrondi</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="qr-corners-square" class="text-sm font-medium">Coins (contour)</label>
+                      <select id="qr-corners-square" class="select mt-2">
+                        <option value="square">Carré</option>
+                        <option value="dot">Point</option>
+                        <option value="extra-rounded" selected>Très arrondi</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="qr-corners-dot" class="text-sm font-medium">Coins (centre)</label>
+                      <select id="qr-corners-dot" class="select mt-2">
+                        <option value="dot" selected>Point</option>
+                        <option value="square">Carré</option>
+                      </select>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="rounded-xl border border-border bg-bg/30 p-3 open:bg-bg/40" open>
+                  <summary class="details-summary cursor-pointer list-none text-sm font-semibold">Couleurs</summary>
+                  <div class="mt-3 grid gap-3 sm:grid-cols-2">
+                    <div class="flex items-center justify-between gap-3">
+                      <label for="qr-dots-color" class="text-sm font-medium">Principale</label>
+                      <input id="qr-dots-color" type="color" class="color-input" />
+                    </div>
+                    <div class="flex items-center justify-between gap-3">
+                      <label for="qr-corners-color" class="text-sm font-medium">Coins</label>
+                      <input id="qr-corners-color" type="color" class="color-input" />
+                    </div>
+                    <div class="flex items-center justify-between gap-3">
+                      <label for="qr-background-color" class="text-sm font-medium">Fond</label>
+                      <input id="qr-background-color" type="color" class="color-input" />
+                    </div>
+                    <div class="flex items-center justify-between gap-3">
+                      <label for="qr-background-transparent" class="flex items-center gap-2 text-sm text-muted">
+                        <input
+                          id="qr-background-transparent"
+                          type="checkbox"
+                          class="h-4 w-4 rounded border-border bg-bg/40 text-accent focus-visible:shadow-focus"
+                        />
+                        Fond transparent
+                      </label>
+                      <span class="tooltip" data-tooltip>
+                        <button
+                          type="button"
+                          class="icon-btn icon-btn-sm"
+                          data-tooltip-toggle
+                          aria-expanded="false"
+                          aria-label="Aide : fond transparent"
+                        >
+                          i
+                        </button>
+                        <div role="tooltip" class="tooltip-panel">
+                          <p class="font-semibold">Fond transparent</p>
+                          <p class="mt-1 text-muted">
+                            Pratique pour intégrer le QR sur une affiche ou un site. Pensez à le placer sur un fond bien
+                            contrasté (clair/foncé).
+                          </p>
+                        </div>
+                      </span>
+                    </div>
+                  </div>
+                </details>
+
+                <details class="rounded-xl border border-border bg-bg/30 p-3 open:bg-bg/40" open>
+                  <summary class="details-summary cursor-pointer list-none text-sm font-semibold">Dégradé (points)</summary>
+                  <div class="mt-3 space-y-3">
+                    <label class="flex items-center gap-2 text-sm text-muted">
+                      <input
+                        id="qr-gradient-enabled"
+                        type="checkbox"
+                        class="h-4 w-4 rounded border-border bg-bg/40 text-accent focus-visible:shadow-focus"
+                      />
+                      Activer le dégradé
+                    </label>
+                    <div id="gradient-options" class="space-y-3" hidden>
+                      <div class="grid gap-3 sm:grid-cols-2">
+                        <div>
+                          <label for="qr-gradient-type" class="text-sm font-medium">Type</label>
+                          <select id="qr-gradient-type" class="select mt-2">
+                            <option value="linear" selected>Linéaire</option>
+                            <option value="radial">Radial</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label for="qr-gradient-rotation" class="flex items-center justify-between text-sm font-medium">
+                            Rotation <span id="qr-gradient-rotation-value" class="text-xs text-muted">0°</span>
+                          </label>
+                          <input
+                            id="qr-gradient-rotation"
+                            type="range"
+                            min="0"
+                            max="360"
+                            step="5"
+                            class="mt-2 w-full accent-accent"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <div class="flex items-center justify-between gap-3">
+                          <p class="text-sm font-medium">Couleurs</p>
+                          <button
+                            id="qr-gradient-add-color"
+                            type="button"
+                            class="help-btn"
+                            aria-label="Ajouter une couleur au dégradé"
+                          >
+                            + Ajouter
+                          </button>
+                        </div>
+                        <div id="qr-gradient-colors" class="mt-2 space-y-2"></div>
+                        <p class="mt-2 text-xs text-muted">
+                          Minimum 2 couleurs. Astuce : plus le contraste est élevé, plus le QR est facile à scanner.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+
+              <!-- LOGO -->
+              <div class="mt-4 space-y-4" data-main-tab-panel="logo" hidden>
+                <details class="rounded-xl border border-border bg-bg/30 p-3 open:bg-bg/40" open>
+                  <summary class="details-summary cursor-pointer list-none text-sm font-semibold">Image / logo</summary>
+                  <p class="mt-2 text-xs text-muted">Ajoutez un logo au centre (optionnel).</p>
+                  <div class="mt-3 space-y-3">
+                    <div class="flex items-center justify-between gap-3">
+                      <label for="qr-logo-upload" class="text-sm font-medium">Importer</label>
+                      <button id="qr-remove-logo" type="button" class="help-btn">Retirer</button>
+                    </div>
+                    <input
+                      id="qr-logo-upload"
+                      type="file"
+                      accept="image/*"
+                      class="block w-full rounded-lg border border-border bg-bg/40 px-3 py-2.5 text-base text-muted file:mr-4 file:rounded-md file:border-0 file:bg-surface-2 file:px-3 file:py-2.5 file:text-sm file:font-semibold file:text-fg hover:file:bg-surface-2/80 md:py-2 md:text-sm"
+                    />
+                    <p id="logo-remove" class="text-xs text-muted" hidden>Logo chargé.</p>
+
+                    <div>
+                      <label for="qr-logo-size" class="flex items-center justify-between text-sm font-medium">
+                        Taille <span id="qr-logo-size-value" class="text-xs text-muted">32%</span>
+                      </label>
+                      <input id="qr-logo-size" type="range" min="0.1" max="0.6" step="0.01" class="mt-2 w-full accent-accent" />
+                    </div>
+                    <div>
+                      <label for="qr-logo-margin" class="flex items-center justify-between text-sm font-medium">
+                        Marge <span id="qr-logo-margin-value" class="text-xs text-muted">0px</span>
+                      </label>
+                      <input id="qr-logo-margin" type="range" min="0" max="24" step="1" class="mt-2 w-full accent-accent" />
+                    </div>
+                    <label class="flex items-center gap-2 text-sm text-muted">
+                      <input
+                        id="qr-hide-background-dots"
+                        type="checkbox"
+                        class="h-4 w-4 rounded border-border bg-bg/40 text-accent focus-visible:shadow-focus"
+                        checked
+                      />
+                      Masquer les points sous le logo
+                    </label>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <section class="mt-10 grid gap-6 md:grid-cols-3" aria-label="Infos">
+          <div class="muted-card">
+            <h2 class="text-base font-semibold">Sans inscription</h2>
+            <p class="mt-2 text-base text-muted md:text-sm">
+              Vous réglez, le QR apparaît immédiatement. Aucun compte, rien à installer.
+            </p>
+          </div>
+          <div class="muted-card">
+            <h2 class="text-base font-semibold">PNG / SVG</h2>
+            <p class="mt-2 text-base text-muted md:text-sm">Téléchargez votre QR en image (PNG) ou pour l'impression (SVG).</p>
+          </div>
+          <div class="muted-card">
+            <h2 class="text-base font-semibold">Personnalisation</h2>
+            <p class="mt-2 text-base text-muted md:text-sm">Taille, styles, coins, couleurs, dégradé et logo.</p>
+          </div>
+        </section>
+      </main>
+
+      <div class="mx-auto w-full max-w-none px-4 pb-6 sm:px-6 lg:max-w-6xl lg:px-8">
+        <div id="ad-slot-bottom"></div>
+      </div>
+
+      <footer class="border-t border-border">
+        <div
+          class="mx-auto flex w-full max-w-none flex-col gap-3 px-4 py-6 sm:px-6 md:flex-row md:items-center md:justify-between lg:max-w-6xl lg:px-8"
+        >
+          <p class="text-base text-muted md:text-sm">QR généré dans votre navigateur — aucune donnée envoyée.</p>
+          <nav class="flex flex-wrap gap-4 text-sm" aria-label="Liens">
+            <a href="/faq.html" class="text-muted hover:text-fg">FAQ</a>
+            <a href="/privacy.html" class="text-muted hover:text-fg">Confidentialité</a>
+            <a href="/about.html" class="text-muted hover:text-fg">À propos</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

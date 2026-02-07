@@ -1,0 +1,234 @@
+@import 'tailwindcss';
+
+@source "../index.html";
+@source "../pages/**/*.html";
+@source "./**/*.js";
+
+@layer theme {
+  @theme {
+    --color-bg: #0F172A;
+    --color-surface-1: #111C33;
+    --color-surface-2: #162447;
+    --color-fg: #E5E7EB;
+    --color-muted: #94A3B8;
+    --color-accent: #38BDF8;
+    --color-danger: #EF4444;
+    --color-border: rgb(148 163 184 / 0.2);
+    --shadow-focus: 0 0 0 3px rgb(56 189 248 / 0.35);
+  }
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  a {
+    @apply text-accent no-underline;
+  }
+
+  a:hover {
+    @apply underline;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgba(56, 189, 248, 0.85);
+    outline-offset: 2px;
+  }
+
+  #qr-mount svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']),
+  a[href],
+  summary,
+  select,
+  input[type='checkbox'],
+  input[type='radio'],
+  input[type='range'],
+  input[type='color'],
+  input[type='file']::file-selector-button {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-border bg-surface-1 p-4;
+  }
+
+  .muted-card {
+    @apply rounded-2xl border border-border bg-surface-1 p-4;
+  }
+
+  @media (min-width: 768px) {
+    .card {
+      @apply p-5;
+    }
+
+    .muted-card {
+      @apply p-5;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .card {
+      @apply p-6;
+    }
+
+    .muted-card {
+      @apply p-6;
+    }
+  }
+
+  .btn {
+    @apply min-h-[44px] rounded-lg border border-border px-4 py-2.5 text-base font-semibold transition cursor-pointer hover:-translate-y-px hover:shadow-sm focus-visible:outline-none focus-visible:shadow-focus md:min-h-0 md:py-2 md:text-sm;
+  }
+
+  .btn-primary {
+    @apply border-transparent bg-accent text-bg shadow-sm hover:brightness-110 hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-surface-2 hover:bg-surface-2/80 hover:shadow-sm;
+  }
+
+  .btn:disabled {
+    @apply cursor-not-allowed opacity-50;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-border bg-bg/40 px-3 py-2.5 text-base text-fg placeholder:text-muted transition focus-visible:outline-none focus-visible:shadow-focus md:py-2 md:text-sm;
+  }
+
+  .select {
+    @apply w-full rounded-lg border border-border bg-bg/40 px-3 py-2.5 text-base text-fg transition hover:bg-bg/50 focus-visible:outline-none focus-visible:shadow-focus md:py-2 md:text-sm;
+  }
+
+  .select option {
+    background-color: var(--color-surface-1);
+    color: var(--color-fg);
+  }
+
+  .select option:checked {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+  }
+
+  .select option:hover,
+  .select option:focus {
+    background-color: var(--color-surface-2);
+    color: var(--color-fg);
+  }
+
+  .textarea {
+    @apply w-full min-h-24 resize-y rounded-lg border border-border bg-bg/40 px-3 py-2.5 text-base text-fg placeholder:text-muted transition focus-visible:outline-none focus-visible:shadow-focus md:py-2 md:text-sm;
+  }
+
+  .help-btn {
+    @apply min-h-[44px] rounded-md border border-border bg-bg/20 px-3 py-2 text-sm font-semibold text-muted transition hover:bg-bg/40 hover:text-fg focus-visible:outline-none focus-visible:shadow-focus md:min-h-0 md:px-2 md:py-1 md:text-xs;
+  }
+
+  .pill {
+    @apply rounded-full border border-border px-3 py-2 text-sm font-semibold text-muted transition hover:bg-bg/25 hover:text-fg focus-visible:outline-none focus-visible:shadow-focus md:py-1 md:text-xs;
+  }
+
+  .tab {
+    @apply rounded-lg border border-border px-3 py-2 text-base font-semibold text-muted transition hover:bg-bg/25 hover:text-fg focus-visible:outline-none focus-visible:shadow-focus md:text-sm;
+  }
+
+  .tab-sm {
+    @apply rounded-lg border border-border px-3 py-2 text-sm font-semibold text-muted transition hover:bg-bg/25 hover:text-fg focus-visible:outline-none focus-visible:shadow-focus md:text-xs;
+  }
+
+  .details-summary {
+    @apply rounded-md px-3 py-2 transition hover:bg-bg/25 focus-visible:outline-none focus-visible:shadow-focus md:px-2 md:py-1;
+  }
+
+  .icon-btn {
+    @apply grid h-11 w-11 place-items-center rounded-lg border border-border bg-bg/20 text-fg transition hover:bg-bg/40 hover:shadow-sm focus-visible:outline-none focus-visible:shadow-focus md:h-9 md:w-9;
+  }
+
+  .icon-btn:disabled {
+    @apply cursor-not-allowed opacity-50;
+  }
+
+  .icon-btn-sm {
+    @apply h-10 w-10 rounded-md text-sm md:h-7 md:w-7 md:text-xs;
+  }
+
+  .color-input {
+    @apply h-10 w-14 rounded border border-border bg-bg/40 transition hover:bg-bg/50 focus-visible:outline-none focus-visible:shadow-focus;
+  }
+
+  .mobile-nav-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    @apply mt-3 overflow-hidden rounded-xl border border-border bg-surface-1/90 backdrop-blur transition;
+  }
+
+  .mobile-nav-panel[data-open='true'] {
+    grid-template-rows: 1fr;
+  }
+
+  .mobile-nav-panel__inner {
+    overflow: hidden;
+    @apply -translate-y-1 opacity-0 transition;
+  }
+
+  .mobile-nav-panel[data-open='true'] .mobile-nav-panel__inner {
+    @apply translate-y-0 opacity-100;
+  }
+
+  .mobile-nav-link {
+    @apply flex items-center justify-between rounded-lg px-3 py-3 text-base font-semibold text-fg transition hover:bg-bg/25 focus-visible:outline-none focus-visible:shadow-focus;
+  }
+
+  .mobile-nav-link[aria-current='page'] {
+    @apply bg-bg/25;
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tooltip-panel {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 0.5rem);
+    z-index: 50;
+    width: min(22rem, calc(100vw - 2rem));
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-4px);
+    @apply rounded-xl border border-border bg-surface-2 p-3 text-xs text-fg shadow-lg transition;
+  }
+
+  .tooltip:hover .tooltip-panel,
+  .tooltip:focus-within .tooltip-panel,
+  .tooltip[data-open='true'] .tooltip-panel {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .status {
+    @apply rounded-lg border border-border bg-bg/30 px-3 py-2 text-sm;
+  }
+}
