@@ -9,11 +9,17 @@ function replaceSiteUrl(content, siteUrl) {
 function pageAliasesPlugin({ siteUrl }) {
   /**
    * Map requested root URLs to files in /pages (source structure),
-   * while keeping final URLs at the site root (/faq.html, /robots.txt, ...).
+   * while keeping clean URLs at the site root (/faq, /privacy, /about).
    */
   const aliases = {
+    '/faq': 'pages/faq.html',
+    '/faq/': 'pages/faq.html',
     '/faq.html': 'pages/faq.html',
+    '/privacy': 'pages/privacy.html',
+    '/privacy/': 'pages/privacy.html',
     '/privacy.html': 'pages/privacy.html',
+    '/about': 'pages/about.html',
+    '/about/': 'pages/about.html',
     '/about.html': 'pages/about.html',
     '/robots.txt': 'pages/robots.txt',
     '/sitemap.xml': 'pages/sitemap.xml',
@@ -38,7 +44,9 @@ function pageAliasesPlugin({ siteUrl }) {
         const absolutePath = path.join(rootDir, mapped)
 
         try {
-          if (urlPath.endsWith('.html')) {
+          const isHtml = mapped.endsWith('.html')
+
+          if (isHtml) {
             const html = await fs.promises.readFile(absolutePath, 'utf-8')
             const transformed = await server.transformIndexHtml(urlPath, html)
             res.statusCode = 200
@@ -71,6 +79,12 @@ function copyPagesToRootPlugin({ siteUrl }) {
     { from: 'pages/about.html', to: 'about.html' },
   ]
 
+  const cleanUrlCopies = [
+    { from: 'faq.html', to: 'faq/index.html' },
+    { from: 'privacy.html', to: 'privacy/index.html' },
+    { from: 'about.html', to: 'about/index.html' },
+  ]
+
   const rawCopies = [
     { from: 'pages/robots.txt', to: 'robots.txt' },
     { from: 'pages/sitemap.xml', to: 'sitemap.xml' },
@@ -99,8 +113,8 @@ function copyPagesToRootPlugin({ siteUrl }) {
         }
       }
 
-      await Promise.all([
-        ...copies.map(async ({ from, to }) => {
+      await Promise.all(
+        copies.map(async ({ from, to }) => {
           const dest = path.join(distDir, to)
           if (await exists(dest)) return
 
@@ -108,15 +122,29 @@ function copyPagesToRootPlugin({ siteUrl }) {
           if (await exists(src)) {
             await fs.promises.copyFile(src, dest)
           }
-        }),
-        ...rawCopies.map(async ({ from, to }) => {
+        })
+      )
+
+      await Promise.all(
+        cleanUrlCopies.map(async ({ from, to }) => {
+          const src = path.join(distDir, from)
+          if (!(await exists(src))) return
+
+          const dest = path.join(distDir, to)
+          await fs.promises.mkdir(path.dirname(dest), { recursive: true })
+          await fs.promises.copyFile(src, dest)
+        })
+      )
+
+      await Promise.all(
+        rawCopies.map(async ({ from, to }) => {
           const src = path.join(rootDir, from)
           const dest = path.join(distDir, to)
           const raw = await fs.promises.readFile(src, 'utf-8')
           const content = replaceSiteUrl(raw, siteUrl)
           await fs.promises.writeFile(dest, content, 'utf-8')
-        }),
-      ])
+        })
+      )
     },
   }
 }
