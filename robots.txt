@@ -4,9 +4,9 @@
 User-agent: *
 Allow: /
 Allow: /index.html
-Allow: /faq.html
-Allow: /privacy.html
-Allow: /about.html
+Allow: /faq
+Allow: /privacy
+Allow: /about
 Allow: /sitemap.xml
 Allow: /robots.txt
 
@@ -34,3 +34,4 @@ Crawl-delay: 1
 
 # Sitemap
 Sitemap: https://qrela.diogo-andrade.org/sitemap.xml
+
