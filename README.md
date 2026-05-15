@@ -33,7 +33,7 @@ npm run preview
 - `public/` : assets statiques (`favicon.svg`, `og-image.png`)
 - `src/main.js` : bootstrap
 - `src/qr/` : instance, update, export, payload
-- `src/ui/` : bindings DOM, state, render, aides, ads placeholders
+- `src/ui/` : bindings DOM, state, render, aides
 - `src/utils/` : validateurs, debounce, presets
 
 ## URL du site (SEO)
@@ -41,16 +41,6 @@ npm run preview
 Les balises `canonical`, OpenGraph et Twitter utilisent `VITE_SITE_URL`.
 
 - Modifiez `VITE_SITE_URL` dans `.env` (ou créez un `.env.local`) avant de déployer.
-
-## Publicités (AdSense) — placeholders
-
-Les emplacements sont prêts, sans clé ni script :
-
-- `src/ui/ads.js` : remplacez le HTML placeholder par votre code AdSense
-- Slots :
-  - sous le header : `#ad-slot-top`
-  - colonne gauche (home) : `#ad-slot-left`
-  - avant le footer : `#ad-slot-bottom`
 
 ## Déploiement
 
